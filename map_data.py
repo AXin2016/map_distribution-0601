@@ -56,21 +56,18 @@ location_1 = []
 map_data = {}
 writer.writerow(['loc','num'])
 for each in location:
-    writer.writerow([each])
     each_1 = each[:3]
     location_1.append(each_1)
-
-print len(location_1)
 
 for each in location_1:
     map_data[each] = location_1.count(each)
 
+final_data = zip(map_data.keys(),map_data.values())
+writer.writerows(final_data)
 for keys,values in map_data.items():
     print keys
-    print values
-    
+    print values    
 csvfile.close()
-
 
 
 
